@@ -1,10 +1,3 @@
-# FROM base/archlinux
-# MAINTAINER Jochen Keil
-# RUN pacman --noconfirm -Syu
-# RUN pacman --noconfirm -S git python
-# RUN useradd --home-dir /reddit --create-home --system --shell /bin/nologin reddit
-# RUN git clone http://github.com/reddit/reddit.git /reddit
-
 FROM ubuntu:12.04
 MAINTAINER Jochen Keil
 
@@ -62,41 +55,6 @@ RUN apt-get update && \
     make \
     optipng \
     jpegoptim
-
-  # memcached
-  # postgresql
-  # postgresql-client
-  # rabbitmq-server
-  # cassandra
-  # haproxy
-  # nginx
-  # stunnel
-  # gunicorn
-  # sutro
-  # libpcre3-dev
-
-# # Libs
-#
-# RUN apt-get install -y python
-# RUN apt-get install -y python-setuptools
-# RUN apt-get install -y python-dev
-# RUN apt-get install -y libmemcached-dev
-# RUN apt-get install -y libpq-dev
-# RUN apt-get install -y libxml2-dev
-# RUN apt-get install -y libxslt1-dev
-# RUN apt-get install -y python-imaging
-#
-# # Misc utils
-#
-# RUN apt-get install -y git-core
-# RUN apt-get install -y gcc
-# RUN apt-get install -y optipng
-# RUN apt-get install -y jpegoptim
-# RUN apt-get install -y postgresql-client
-# RUN apt-get install -y make
-# RUN apt-get install -y gettext
-# RUN apt-get install -y nodejs
-# RUN apt-get install -y node-less
 
 RUN useradd --system --shell /bin/nologin reddit
 RUN git clone http://github.com/reddit/reddit.git /reddit
