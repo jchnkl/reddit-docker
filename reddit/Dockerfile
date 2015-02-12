@@ -70,3 +70,9 @@ RUN python setup.py develop
 
 USER reddit
 RUN make
+
+ADD gs.update /reddit/r2/gs.update
+RUN make ini
+
+EXPOSE 8081
+ENTRYPOINT paster serve gs.ini http_port=8081
