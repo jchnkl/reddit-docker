@@ -50,7 +50,7 @@ default_header_url = reddit.com.header.png
 
 #### Domains
 # the domain that this app expects to be accessed on
-domain = reddit.local
+domain = reddit-jochen.gigantic.io
 # where third party media (embeds etc.) are hosted
 # this should be different from `domain` for security
 media_domain = %(domain)s
@@ -366,25 +366,25 @@ CLOUDSEARCH_SUBREDDIT_DOC_API =
 ############################################ MEMCACHE
 num_mc_clients = 5
 # core memcache cluster, Things and various other stuff
-memcaches = 127.0.0.1:11211
+memcaches = reddit-memcached:11211
 # caches used for @memoize decorator magic
-memoizecaches = 127.0.0.1:11211
+memoizecaches = reddit-memcached:11211
 # hosts to store memcache-based locks on
-lockcaches = 127.0.0.1:11211
+lockcaches = reddit-memcached:11211
 # hosts to store rendered template fragments in
-rendercaches = 127.0.0.1:11211
+rendercaches = reddit-memcached:11211
 # hosts to store entire rendered pages in
-pagecaches = 127.0.0.1:11211
+pagecaches = reddit-memcached:11211
 # hosts that cache permacache cassandra data
-permacache_memcaches = 127.0.0.1:11211
+permacache_memcaches = reddit-memcached:11211
 # hosts that cache srmember rels (subset of Thing data)
-srmembercaches = 127.0.0.1:11211
+srmembercaches = reddit-memcached:11211
 # hosts that cache relations between Things
-relcaches = 127.0.0.1:11211
+relcaches = reddit-memcached:11211
 # a local cache that's not globally consistent and can have stale data (optional)
 stalecaches =
 # cache for tracking rate limit thresholds
-ratelimitcaches = 127.0.0.1:11211
+ratelimitcaches = reddit-memcached:11211
 
 
 ############################################ MISCELLANEOUS
@@ -439,7 +439,7 @@ hsts_max_age = 10886400
 
 ############################################ CASSANDRA
 # cassandra hosts
-cassandra_seeds = 127.0.0.1:9160
+cassandra_seeds = reddit-cassandra:9160
 # number of connections to keep open to the cassandra ring
 cassandra_pool_size = 5
 # default read/write consistency levels for Cassandra
@@ -450,7 +450,7 @@ cassandra_default_pool = main
 
 
 ############################################ AMQP
-amqp_host = localhost:5672
+amqp_host = reddit-rabbitmq:5672
 amqp_user = reddit
 amqp_pass = reddit
 amqp_virtual_host = /
@@ -475,7 +475,7 @@ feedback_email = reddit@gmail.com
 
 ############################################ POSTGRES
 db_user = reddit
-db_pass = password
+db_pass = reddit
 db_port = 5432
 db_pool_size = 3
 db_pool_overflow_size = 3
@@ -484,14 +484,14 @@ db_pool_overflow_size = 3
 databases = main, comment, email, authorize, award, hc, traffic
 
 #db name       db         host      user, pass, port, conn, overflow_conn
-main_db =      reddit,   127.0.0.1, *,    *,    *,    *,    *
-comment_db =   reddit,   127.0.0.1, *,    *,    *,    *,    *
-comment2_db =  reddit,   127.0.0.1, *,    *,    *,    *,    *
-email_db =     reddit,   127.0.0.1, *,    *,    *,    *,    *
-authorize_db = reddit,   127.0.0.1, *,    *,    *,    *,    *
-award_db =     reddit,   127.0.0.1, *,    *,    *,    *,    *
-hc_db =        reddit,   127.0.0.1, *,    *,    *,    *,    *
-traffic_db =   reddit,   127.0.0.1, *,    *,    *,    *,    *
+main_db =      reddit,   reddit-postgres, *,    *,    *,    *,    *
+comment_db =   reddit,   reddit-postgres, *,    *,    *,    *,    *
+comment2_db =  reddit,   reddit-postgres, *,    *,    *,    *,    *
+email_db =     reddit,   reddit-postgres, *,    *,    *,    *,    *
+authorize_db = reddit,   reddit-postgres, *,    *,    *,    *,    *
+award_db =     reddit,   reddit-postgres, *,    *,    *,    *,    *
+hc_db =        reddit,   reddit-postgres, *,    *,    *,    *,    *
+traffic_db =   reddit,   reddit-postgres, *,    *,    *,    *,    *
 
 hardcache_categories = *:hc:hc
 
