@@ -16,6 +16,11 @@
                         "alias": "reddit-memcached"
                       },
                       {
+                        "name": "geoip",
+                        "port": 5000,
+                        "alias": "reddit-geoip"
+                      },
+                      {
                         "name": "reddit-postgres",
                         "port": 5432
                       },
@@ -39,6 +44,11 @@
                     "component_name": "memcached",
                     "image": "memcached",
                     "ports": [ "11211/tcp" ]
+                },
+                {
+                    "component_name": "geoip",
+                    "image": "jotrk/geoip",
+                    "ports": [ "5000/tcp" ]
                 },
                 {
                     "component_name": "reddit-postgres",

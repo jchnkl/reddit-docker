@@ -406,7 +406,7 @@ known_image_domains = i.imgur.com, giant.gfycat.com, pbs.twimg.com, upload.wikim
 # whether to load reddit private code (a hack until we structure it better)
 import_private = false
 # location of geoip service
-geoip_location = http://127.0.0.1:5000
+geoip_location = http://reddit-geoip:5000
 
 
 ############################################ AUTHENTICATION
