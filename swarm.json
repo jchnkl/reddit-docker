@@ -12,7 +12,8 @@
                     "dependencies": [
                       {
                         "name": "memcached",
-                        "port": 11211
+                        "port": 11211,
+                        "alias": "reddit-memcached"
                       },
                       {
                         "name": "reddit-postgres",
@@ -24,6 +25,12 @@
                       },
                       {
                         "name": "reddit-cassandra",
+                        "port": 61621,
+                        "port": 7000,
+                        "port": 7001,
+                        "port": 7199,
+                        "port": 8012,
+                        "port": 9042,
                         "port": 9160
                       }
                     ]
@@ -46,7 +53,7 @@
                 {
                     "component_name": "reddit-cassandra",
                     "image": "jotrk/reddit-cassandra",
-                    "ports": [ "9160/tcp" ]
+                    "ports": [ "61621/tcp", "7000/tcp", "7001/tcp", "7199/tcp", "8012/tcp", "9042/tcp", "9160/tcp" ]
                 }
             ]
         }
