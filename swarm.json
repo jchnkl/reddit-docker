@@ -2,7 +2,7 @@
     "app_name": "reddit",
     "services": [
         {
-            "service_name": "reddit-service",
+            "service_name": "reddit",
             "components": [
                 {
                     "component_name": "reddit",
@@ -11,27 +11,27 @@
                     "domains": { "$domain": "8081" },
                     "dependencies": [
                       {
-                        "name": "memcached",
+                        "name": "reddit-memcached/memcached",
                         "port": 11211,
                         "alias": "reddit-memcached"
                       },
                       {
-                        "name": "geoip",
+                        "name": "reddit-geoip/geoip",
                         "port": 5000,
                         "alias": "reddit-geoip"
                       },
                       {
-                        "name": "reddit-postgres",
+                        "name": "reddit-postgres/reddit-postgres",
                         "port": 5432,
                         "alias": "reddit-postgres"
                       },
                       {
-                        "name": "reddit-rabbitmq",
+                        "name": "reddit-rabbitmq/reddit-rabbitmq",
                         "port": 5672,
                         "alias": "reddit-rabbitmq"
                       },
                       {
-                        "name": "reddit-cassandra",
+                        "name": "reddit-cassandra/reddit-cassandra",
                         "port": 61621,
                         "port": 7000,
                         "port": 7001,
@@ -42,27 +42,52 @@
                         "alias": "reddit-cassandra"
                       }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "service_name": "reddit-memcached",
+            "components": [
                 {
                     "component_name": "memcached",
                     "image": "memcached",
                     "ports": [ "11211/tcp" ]
-                },
+                }
+            ]
+        },
+        {
+            "service_name": "reddit-geoip",
+            "components": [
                 {
                     "component_name": "geoip",
                     "image": "jotrk/geoip",
                     "ports": [ "5000/tcp" ]
-                },
+                }
+            ]
+        },
+        {
+            "service_name": "reddit-postgres",
+            "components": [
                 {
                     "component_name": "reddit-postgres",
                     "image": "jotrk/reddit-postgres",
                     "ports": [ "5432/tcp" ]
-                },
+                }
+            ]
+        },
+        {
+            "service_name": "reddit-rabbitmq",
+            "components": [
                 {
                     "component_name": "reddit-rabbitmq",
                     "image": "jotrk/reddit-rabbitmq",
                     "ports": [ "5672/tcp" ]
-                },
+                }
+            ]
+        },
+        {
+            "service_name": "reddit-cassandra",
+            "components": [
                 {
                     "component_name": "reddit-cassandra",
                     "image": "jotrk/reddit-cassandra",
