@@ -22,11 +22,13 @@
                       },
                       {
                         "name": "reddit-postgres",
-                        "port": 5432
+                        "port": 5432,
+                        "alias": "reddit-postgres"
                       },
                       {
                         "name": "reddit-rabbitmq",
-                        "port": 5672
+                        "port": 5672,
+                        "alias": "reddit-rabbitmq"
                       },
                       {
                         "name": "reddit-cassandra",
@@ -36,7 +38,8 @@
                         "port": 7199,
                         "port": 8012,
                         "port": 9042,
-                        "port": 9160
+                        "port": 9160,
+                        "alias": "reddit-cassandra"
                       }
                     ]
                 },
