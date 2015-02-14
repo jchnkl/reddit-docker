@@ -1,7 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
-cassandra-cli -h 172.17.0.143 << EOF
-create keyspace reddit;
-use reddit;
-create column family permacache with column_type = 'Standard' and comparator = 'BytesType';
-EOF
+cassandra-cli -h $HOSTNAME create keyspace reddit;
+cassandra-cli -h $HOSTNAME use reddit;
+cassandra-cli -h $HOSTNAME create column family permacache with column_type = 'Standard' and comparator = 'BytesType';
