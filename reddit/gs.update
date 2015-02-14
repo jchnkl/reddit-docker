@@ -451,8 +451,8 @@ cassandra_default_pool = main
 
 ############################################ AMQP
 amqp_host = reddit-rabbitmq:5672
-amqp_user = reddit
-amqp_pass = reddit
+amqp_user = guest
+amqp_pass = guest
 amqp_virtual_host = /
 
 
