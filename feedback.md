@@ -59,6 +59,8 @@ Anwendersicht: was bedeutet die Fehlermeldung?)
 11) Welchen Sinn hat die Gliederung in App/Service/Component?
 Dazu finde ich leider nichts in der Dokumentation.
 
+12) Warum ist meine Datenbank auf einmal weg?
+    Und warum sind die Logs für die entsprechende Komponente leer?
 
 Generelle Fragen:
 
