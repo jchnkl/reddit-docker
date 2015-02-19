@@ -62,6 +62,9 @@ Dazu finde ich leider nichts in der Dokumentation.
 12) Warum ist meine Datenbank auf einmal weg?
     Und warum sind die Logs für die entsprechende Komponente leer?
 
+13) Ist die web API (`api.giantswarm.io`) undokumentiert? Ich kann zumindest
+    keine Dokumentation finden
+
 Generelle Fragen:
 
 1) Wie steht es um Load Balancing? Muss sich meine App selber drum kümmern? Wenn
